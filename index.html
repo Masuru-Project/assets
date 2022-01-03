@@ -1,0 +1,121 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <!--ข้อมูลพื้นฐานของ WebSite-->
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Masuru-Nginx  AI Chat & Music System & MMOGAME">
+    <meta name="author" content="Masuru-Nginx  Discord">
+    <meta name="keywords" content="Masuru-Nginx discord aichat musicbot lavalinkdiscord">
+    <!--หัวข้อ WebSite-->
+    <title>Masuru-Nginx </title>
+    <link rel="icon" type="image/png" href="https://www.masuru.pw/favicon-32x32.png">
+
+    <link rel="stylesheet" href="css/bootstrap.min.css">
+    <link rel="stylesheet" href="css/style.css">
+</head>
+
+<body style="background-color:black;">
+
+    <div class="cursor"></div>
+    <!-- --------PreLoader-------- -->
+    <link rel='stylesheet' id='onepagepower-parent-style-css' href='css/preload.css' type='text/css' media='all' />
+    <script type='text/javascript' src='js/jquery.min.js' id='jquery-core-js'></script>
+    <script type='text/javascript' src='js/jquery-migrate.min.js' id='jquery-migrate-js'></script>
+    <style type='text/css'>
+        .loader {
+            border-top: 2px solid #000000;
+        }
+
+        .center-screen {
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            margin-right: -50%;
+            transform: translate(-50%, -50%);
+        }
+    </style>
+    <script type='text/javascript' src='js/custom.js' id='featuredlite-custom-js'></script>
+    <div class="overlayloader">
+        <div class="loader">&nbsp;</div>
+    </div>
+
+    <link rel="stylesheet" href="theme-dark/dark.css">
+    <script>
+        const updateProperties = (elem, state) => {
+            elem.style.setProperty('--x', `${state.x}px`)
+            elem.style.setProperty('--y', `${state.y}px`)
+            elem.style.setProperty('--width', `${state.width}px`)
+            elem.style.setProperty('--height', `${state.height}px`)
+            elem.style.setProperty('--radius', state.radius)
+            elem.style.setProperty('--scale', state.scale)
+        }
+
+        document.querySelectorAll('.cursor').forEach(cursor => {
+            let onElement
+
+            const createState = e => {
+                const defaultState = {
+                    x: e.clientX,
+                    y: e.clientY,
+                    width: 40,
+                    height: 40,
+                    radius: '50%'
+                }
+
+                const computedState = {}
+
+                if (onElement != null) {
+                    const { top, left, width, height } = onElement.getBoundingClientRect()
+                    const radius = window.getComputedStyle(onElement).borderTopLeftRadius
+
+                    computedState.x = left + width / 2
+                    computedState.y = top + height / 2
+                    computedState.width = width
+                    computedState.height = height
+                    computedState.radius = radius
+                }
+
+                return {
+                    ...defaultState,
+                    ...computedState
+                }
+            }
+
+            document.addEventListener('mousemove', e => {
+                const state = createState(e)
+                updateProperties(cursor, state)
+            })
+
+            document.querySelectorAll('a, button').forEach(elem => {
+                elem.addEventListener('mouseenter', () => (onElement = elem))
+                elem.addEventListener('mouseleave', () => (onElement = undefined))
+            })
+        })
+
+    </script>
+    <script src="https://kit.fontawesome.com/66e17fc1d7.js" crossorigin="anonymous"></script>
+    <div class="center-screen">
+        <h2 class="text-white">Masuru Nginx - Hostitng Support</h2>
+    </div>
+    <video width="100%" height="100%" autoplay
+        poster="https://media.discordapp.net/attachments/900960994329784380/906162921304883252/unknown.png" loop muted
+        playsinline>
+        <source src="video/Index.mp4" type="video/mp4" />
+    </video>
+
+    <script>
+        var audio = document.createElement("AUDIO")
+        document.body.appendChild(audio);
+        audio.src = "video/Index.mp4"
+        audio.volume = 0.1;
+        document.body.addEventListener("mousemove", function () {
+            audio.play()
+        })
+    </script>
+    <script src="js/bootstrap.min.js"></script>
+
+</body>
+
+</html>
