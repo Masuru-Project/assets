@@ -9,5 +9,6 @@ var styles = [
     , 'text-align: center'
     , 'font-weight: bold'
 ].join(';');
-
-console.log('%c Masuru-Nginx ', styles);
+setTimeout(() => {
+    console.log('%c Masuru-Nginx ', styles)
+}, 20000)
